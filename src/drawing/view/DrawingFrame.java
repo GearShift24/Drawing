@@ -2,6 +2,7 @@ package drawing.view;
 
 import javax.swing.*;
 import java.awt.*;
+import drawing.controller.*;
 
 public class DrawingFrame extends JFrame
 {

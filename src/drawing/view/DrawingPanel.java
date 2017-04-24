@@ -12,7 +12,7 @@ public class DrawingPanel extends JPanel
 	private SpringLayout baseLayout;
 	private DrawingController baseController;
 	
-	private JButton firstButton;
+	private JButton rectangleButton;
 	private ShapePanel shapePanel;
 	
 	
@@ -20,7 +20,7 @@ public class DrawingPanel extends JPanel
 	{
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
-		this.firstButton = new JButton("click me breh");
+		this.rectangleButton = new JButton("click me breh");
 		
 		shapePanel = new ShapePanel(baseController);
 	
@@ -34,7 +34,7 @@ public class DrawingPanel extends JPanel
 	{
 		this.setBackground(Color.GREEN);
 		this.setLayout(baseLayout);
-		this.add(firstButton);
+		this.add(rectangleButton);
 		this.add(shapePanel);
 	}
 	private void setupLayout()
@@ -46,6 +46,14 @@ public class DrawingPanel extends JPanel
 	}
 	private void setupListeners()
 	{
-		
+		rectangleButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				shapePanel.addRectangles();
+			}
+				}
+				
+				);
 	}
 }

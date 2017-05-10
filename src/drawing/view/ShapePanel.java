@@ -99,8 +99,10 @@ public class ShapePanel extends JPanel
 			int [] yVertices = new int [vertexCount];
 			for(int vertex = 0; vertex < vertexCount; vertex++)
 			{
-				int xCorner = (int) (Math.random() * this.getWidth());
-				int yCorner = (int) (Math.random() * this.getHeight());
+				
+				int originish = (int) (Math.min(Math.random() * this.getWidth(), Math.random() * this.getHeight()));
+				int xCorner = (int) (Math.random() * this.getWidth()) + originish;
+				int yCorner = (int) (Math.random() * this.getHeight()) + originish;
 				xVertices[vertex] = xCorner;
 				yVertices[vertex] = yCorner;
 			}
@@ -240,14 +242,14 @@ public class ShapePanel extends JPanel
 		this.repaint();
 	}
 	
-	public void savePanel()
-	{
-		BufferedImage panelImage = new BufferedImage(this.getSize().width, this.getSize(), height, BufferedImage.TYPE_INT_ARGB);
-		Graphics fileGraphics = panelImage.getGraphics();
-		
-		 
-		
-		
-	}
+//	public void savePanel()
+//	{
+//		BufferedImage panelImage = new BufferedImage(this.getSize().width, this.getSize(), height, BufferedImage.TYPE_INT_ARGB);
+//		Graphics fileGraphics = panelImage.getGraphics();
+//		
+//		 
+//		
+//		
+//	}
 	
 }
